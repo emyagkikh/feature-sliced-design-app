@@ -7,6 +7,8 @@ const paths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
+    src: path.resolve(__dirname, 'src'),
+    app: path.resolve(__dirname),
 };
 
 const config = (env: BuildEnv): webpack.Configuration => {
