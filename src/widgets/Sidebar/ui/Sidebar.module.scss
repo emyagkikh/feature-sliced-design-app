@@ -1,0 +1,19 @@
+.Sidebar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 160px;
+  height: 100%;
+  padding: 20px;
+  background: #ccc;
+  border-right: 1px solid #000;
+}
+
+.sItem {
+  margin: 0 0 20px;
+
+  &:last-child {
+    margin: 0;
+  }
+}

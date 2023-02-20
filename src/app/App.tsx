@@ -1,21 +1,25 @@
 import React, {Suspense} from 'react';
-import {Link, Route, Routes} from "react-router-dom";
 import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/ThemeProvider/lib/useTheme";
 import {AppRouter} from "app/providers/router";
+import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar/ui/Sidebar";
 
 const App = () => {
-    const {theme, toggleTheme} = useTheme()
+    const {theme} = useTheme()
 
     return (
+      <Suspense fallback={null}>
         <div className={classNames('app', {}, [theme])}>
-            <Link to={'/'} >Главная</Link>
-            <Link to={'/about'}>О сайте</Link>
-            <AppRouter/>
-            <button onClick={toggleTheme}>
-                Сменить тему
-            </button>
+          <Navbar />
+          <main className={'main'}>
+            <Sidebar />
+            <section className={'page'}>
+              <AppRouter/>
+            </section>
+          </main>
         </div>
+      </Suspense>
     );
 };
 
