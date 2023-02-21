@@ -6,6 +6,7 @@ module.exports = {
   'extends': [
     'standard-with-typescript',
     'plugin:react/recommended',
+    'plugin:i18next/recommended',
   ],
   'overrides': [
   ],
@@ -19,6 +20,7 @@ module.exports = {
   },
   'plugins': [
     'react',
+    'i18next',
   ],
   'rules': {
     'indent': [2, 2],
@@ -36,6 +38,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': [0, 'always'],
     '@typescript-eslint/naming-convention': [0, 'always'],
     '@typescript-eslint/strict-boolean-expressions': [0, 'always'],
+    'i18next/no-literal-string': [2, { 'markupOnly': true }],
   },
   'settings': {
     'react': {
