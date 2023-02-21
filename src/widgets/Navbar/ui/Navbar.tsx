@@ -1,16 +1,16 @@
-import React, {FunctionComponent} from 'react';
-import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
-import {classNames} from "shared/lib/classNames/classNames";
+import React, { type FunctionComponent } from 'react';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Navbar.module.scss';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
-  className?: string;
+  className?: string
 }
 
-export const Navbar: FunctionComponent<NavbarProps> = ({className}) => {
-  const {t} = useTranslation();
+export const Navbar: FunctionComponent<NavbarProps> = ({ className }) => {
+  const { t } = useTranslation();
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>

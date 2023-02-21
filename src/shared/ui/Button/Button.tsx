@@ -1,5 +1,5 @@
-import {ButtonHTMLAttributes, FunctionComponent} from 'react';
-import {classNames} from "shared/lib/classNames/classNames";
+import { type ButtonHTMLAttributes, type FunctionComponent } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Button.module.scss';
 
@@ -8,12 +8,12 @@ export enum ThemeButton {
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  theme?: ThemeButton;
+  className?: string
+  theme?: ThemeButton
 }
 
 export const Button: FunctionComponent<IButtonProps> = (props) => {
-  const {className, theme, children, ...other} = props;
+  const { className, theme, children, ...other } = props;
 
   return (
     <button
@@ -23,9 +23,9 @@ export const Button: FunctionComponent<IButtonProps> = (props) => {
         cls.Button,
         {},
         [
-          cls[theme],
-          className
-        ]
+          theme && cls[theme],
+          className,
+        ],
       )}
     >
       {children}

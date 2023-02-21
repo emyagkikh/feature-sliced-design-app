@@ -1,6 +1,6 @@
-import {FunctionComponent} from 'react';
-import {Link, LinkProps} from "react-router-dom";
-import {classNames} from "shared/lib/classNames/classNames";
+import { type FunctionComponent } from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './AppLink.module.scss';
 
@@ -10,12 +10,12 @@ export enum AppLinkTheme {
 }
 
 interface IAppLinkProps extends LinkProps {
-  className?: string;
-  theme?: AppLinkTheme;
+  className?: string
+  theme?: AppLinkTheme
 }
 
 export const AppLink: FunctionComponent<IAppLinkProps> = (props) => {
-  const {className, to, children, theme = AppLinkTheme.PRIMARY, ...otherProps} = props;
+  const { className, to, children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
 
   return (
     <Link
