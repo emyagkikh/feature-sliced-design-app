@@ -1,0 +1,17 @@
+.Navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--inverted-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.nlItem {
+  margin: 0 20px 0 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -9,14 +11,21 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"],
+      "*": ["./src/*"]
     },
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "jsoncompilerOptions": {
+    "strictNullChecks": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./src/**/*",
+    "./config/**/*"
+  ]
 }
