@@ -17,7 +17,9 @@ module.exports = {
     'ecmaFeatures': {
       'jsx': true,
     },
-    'project': ['./tsconfig.json'],
+    'project': [
+      './tsconfig.json',
+    ],
   },
   'plugins': [
     'react',
@@ -39,7 +41,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': [0, 'always'],
     '@typescript-eslint/naming-convention': [0, 'always'],
     '@typescript-eslint/strict-boolean-expressions': [0, 'always'],
-    'i18next/no-literal-string': [2, { 'markupOnly': true }],
+    'i18next/no-literal-string': [0, 'always'],
   },
   'settings': {
     'react': {

@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
   'moduleDirectories': [
     'node_modules',
@@ -26,5 +28,6 @@ export default {
   'setupFilesAfterEnv': ['<rootDir>/config/jest/jest-setup.ts'],
   'moduleNameMapper': {
     '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
 };
