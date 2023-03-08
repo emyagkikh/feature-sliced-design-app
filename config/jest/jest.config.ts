@@ -23,7 +23,7 @@ export default {
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   'modulePaths': [
-    '<rootDir>src',
+    '<rootDir>src/',
   ],
   'setupFilesAfterEnv': ['<rootDir>/config/jest/jest-setup.ts'],
   'moduleNameMapper': {
