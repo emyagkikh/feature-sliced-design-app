@@ -3,10 +3,10 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDecorator';
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 
-export default {
+const componentMeta: ComponentMeta<typeof Button> = {
   'title': 'shared/Button',
   'component': Button,
-} as ComponentMeta<typeof Button>;
+};
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args}/>;
 
@@ -35,3 +35,5 @@ OutlineDark.args = {
 OutlineDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

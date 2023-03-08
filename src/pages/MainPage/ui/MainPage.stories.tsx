@@ -3,12 +3,12 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import MainPage from './MainPage';
 
-export default {
+const componentMeta: ComponentMeta<typeof MainPage> = {
   'title': 'pages/MainPage',
   'component': MainPage,
-} as ComponentMeta<typeof MainPage>;
+};
 
-const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...args}/>;
+const Template: ComponentStory<typeof MainPage> = (args) => <MainPage />;
 
 export const MainPageLight = Template.bind({});
 
@@ -16,3 +16,5 @@ export const MainPageDark = Template.bind({});
 MainPageDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

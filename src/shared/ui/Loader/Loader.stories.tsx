@@ -3,10 +3,10 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import { Loader } from 'shared/ui/Loader/Loader';
 
-export default {
+const componentMeta: ComponentMeta<typeof Loader> = {
   'title': 'shared/Loader',
   'component': Loader,
-} as ComponentMeta<typeof Loader>;
+};
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args}/>;
 
@@ -16,3 +16,5 @@ export const LoaderDark = Template.bind({});
 LoaderDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;
