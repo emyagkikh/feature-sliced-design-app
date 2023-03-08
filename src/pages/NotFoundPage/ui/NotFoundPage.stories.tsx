@@ -3,10 +3,10 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import NotFoundPage from './NotFoundPage';
 
-export default {
+const componentMeta: ComponentMeta<typeof NotFoundPage> = {
   'title': 'pages/NotFoundPage',
   'component': NotFoundPage,
-} as ComponentMeta<typeof NotFoundPage>;
+};
 
 const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args}/>;
 
@@ -16,3 +16,5 @@ export const NotFoundPageDark = Template.bind({});
 NotFoundPageDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

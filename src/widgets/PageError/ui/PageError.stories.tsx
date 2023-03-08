@@ -3,10 +3,10 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import { PageError } from './PageError';
 
-export default {
+const componentMeta: ComponentMeta<typeof PageError> = {
   'title': 'widgets/PageError',
   'component': PageError,
-} as ComponentMeta<typeof PageError>;
+};
 
 const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args}/>;
 
@@ -15,3 +15,5 @@ export const PageErrorDark = Template.bind({});
 PageErrorDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

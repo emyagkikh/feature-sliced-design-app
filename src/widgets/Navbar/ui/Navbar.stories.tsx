@@ -3,10 +3,10 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import { Navbar } from './Navbar';
 
-export default {
+const componentMeta: ComponentMeta<typeof Navbar> = {
   'title': 'widgets/Navbar',
   'component': Navbar,
-} as ComponentMeta<typeof Navbar>;
+};
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args}/>;
 
@@ -15,3 +15,5 @@ export const NavbarDark = Template.bind({});
 NavbarDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

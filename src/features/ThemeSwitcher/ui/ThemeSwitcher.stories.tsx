@@ -3,10 +3,10 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
-export default {
+const componentMeta: ComponentMeta<typeof ThemeSwitcher> = {
   'title': 'features/ThemeSwitcher',
   'component': ThemeSwitcher,
-} as ComponentMeta<typeof ThemeSwitcher>;
+};
 
 const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args}/>;
 
@@ -16,3 +16,5 @@ export const ThemeSwitcherDark = Template.bind({});
 ThemeSwitcherDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

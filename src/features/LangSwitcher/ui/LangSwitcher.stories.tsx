@@ -3,10 +3,10 @@ import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDec
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 import { LangSwitcher } from './LangSwitcher';
 
-export default {
+const componentMeta: ComponentMeta<typeof LangSwitcher> = {
   'title': 'features/LangSwitcher',
   'component': LangSwitcher,
-} as ComponentMeta<typeof LangSwitcher>;
+};
 
 const Template: ComponentStory<typeof LangSwitcher> = (args) => <LangSwitcher {...args}/>;
 
@@ -16,3 +16,5 @@ export const LangSwitcherDark = Template.bind({});
 LangSwitcherDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

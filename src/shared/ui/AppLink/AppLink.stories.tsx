@@ -3,14 +3,14 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '../../../../config/storybook/decorators/ThemeDecorator';
 import { ThemeEnum } from 'app/providers/ThemeProvider';
 
-export default {
+const componentMeta: ComponentMeta<typeof AppLink> = {
   'title': 'shared/AppLink',
   'component': AppLink,
   'args': {
     'children': 'app link content',
     'to': '/',
   },
-} as ComponentMeta<typeof AppLink>;
+};
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args}/>;
 
@@ -39,3 +39,5 @@ SecondaryDark.args = {
 SecondaryDark.decorators = [
   ThemeDecorator(ThemeEnum.DARK),
 ];
+
+export default componentMeta;

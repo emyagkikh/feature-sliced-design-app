@@ -1,4 +1,4 @@
-import { type FunctionComponent, Suspense } from 'react';
+import { type FunctionComponent } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { useTranslation } from 'react-i18next';
