@@ -1,4 +1,4 @@
-type Mods = Record<string, (boolean | undefined)> | string
+export type Mods = Record<string, (boolean | undefined)> | string
 
 export const classNames = (cls: string, mods: Mods = {}, additional: Array<string | undefined> = []): string => {
   return [

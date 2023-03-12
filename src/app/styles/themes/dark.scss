@@ -1,8 +1,9 @@
 .app {
   &.dark {
-    --bg-color: #222;
-    --inverted-bg-color: #ddd;
-    --primary-color: #ddd;
-    --secondary-color: #eee;
+    --primary-color: #bb86fc;
+    --secondary-color: #6200ee;
+    --bg-primary-color: #000;
+    --bg-secondary-color: #222;
+    --border-primary-color: #333;
   }
 }

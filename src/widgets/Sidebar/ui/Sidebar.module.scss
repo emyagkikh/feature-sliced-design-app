@@ -1,23 +1,40 @@
 .Sidebar {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-  width: 160px;
+  max-width: 250px;
+  width: auto;
   height: 100%;
   padding: 20px;
-  background: #ccc;
-  border-right: 1px solid #000;
+  background: var(--bg-secondary-color);
+}
+
+.sSwitchers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: auto 0 0;
+}
+
+.sNavRoutes {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
 }
 
 .Sidebar_minified {
-  width: 100px;
+  width: 160px;
+
+  & .sSwitchers {
+    flex-direction: column;
+  }
 }
 
-.sItem {
-  margin: 0 0 20px;
-
-  &:last-child {
-    margin: 0;
-  }
+.collapseBtn {
+  position: absolute;
+  bottom: 40px;
+  left: 100%;
 }

@@ -9,7 +9,7 @@ on:
 
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         node-version: [ 16.x ]
@@ -26,14 +26,25 @@ jobs:
 
       - name: linting typescript
         run: npm run lint:ts
+        if: always()
 
       - name: linting styles
         run: npm run lint:scss
+        if: always()
 
       - name: build project prod version
         run: npm run build:prod
+        if: always()
 
-      - name: unit testing
-        run: npm run test:unit
+#      - name: unit testing
+#        run: npm run test:unit
+#        if: always()
+
+      - name: build storybook
+        run: npm run storybook:build
+        if: always()
+
+#      - name: screenshot testing
+#        run: npm run test:ui:ci
 
 

@@ -14,3 +14,44 @@
   background: none;
   border: 1px solid var(--primary-color);
 }
+
+.background {
+  padding: .5em 1em;
+  color: var(--primary-color);
+  background: var(--bg-secondary-color);
+  border: none;
+}
+
+.size_m {
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+}
+
+.size_l {
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
+}
+
+.size_xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
+}
+
+.square {
+  padding: 0;
+
+  &.size_m {
+    width: var(--button-square-size-m);
+    height: var(--button-square-size-m);
+  }
+
+  &.size_l {
+    width: var(--button-square-size-l);
+    height: var(--button-square-size-l);
+  }
+
+  &.size_xl {
+    width: var(--button-square-size-xl);
+    height: var(--button-square-size-xl);
+  }
+}

@@ -14,6 +14,7 @@ describe('Sidebar', () => {
     const sidebarEl = screen.getByTestId('sidebar');
     const toggleButton = screen.getByTestId('sidebar-btn-toggle');
     expect(sidebarEl).toBeInTheDocument();
+    expect(toggleButton).toBeInTheDocument();
     fireEvent.click(toggleButton);
     expect(sidebarEl).toHaveClass(cls.Sidebar_minified);
   });

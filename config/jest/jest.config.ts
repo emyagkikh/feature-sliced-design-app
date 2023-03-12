@@ -20,7 +20,7 @@ export default {
   'rootDir': '../../',
   'testEnvironment': 'jsdom',
   'testMatch': [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    '<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   'modulePaths': [
     '<rootDir>src',
