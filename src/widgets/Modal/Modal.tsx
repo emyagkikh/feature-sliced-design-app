@@ -3,7 +3,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Modal.module.scss';
 import { Button } from 'shared/ui/Button/Button';
-import { Portal } from 'shared/ui/Portal/Portal';
 
 interface IModalProps {
   className?: string
@@ -12,6 +11,7 @@ interface IModalProps {
 }
 
 enum EModalState {
+  PREPARED,
   OPENING,
   OPENED,
   CLOSING,
@@ -25,10 +25,14 @@ export const Modal: FunctionComponent<IModalProps> = (props) => {
     onClose,
   } = props;
 
-  const [modalState, setModalState] = useState(props.isOpen ? EModalState.OPENING : EModalState.CLOSED);
-
-  const portalContainerRef = useRef<HTMLElement>(document.querySelector('#modal-portal'));
+  const [modalState, setModalState] = useState(EModalState.PREPARED);
   const contentElRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (props.isOpen) {
+      setModalState(EModalState.OPENING);
+    }
+  }, [props.isOpen]);
 
   const initModalClosing = useCallback(() => {
     setModalState(EModalState.CLOSING);
@@ -71,33 +75,34 @@ export const Modal: FunctionComponent<IModalProps> = (props) => {
     if (modalState === EModalState.OPENED) {
       window.addEventListener('keydown', onKeyDownHandler);
     }
+
     if (modalState === EModalState.CLOSED) {
+      window.removeEventListener('keydown', onKeyDownHandler);
+
       if (typeof onClose === 'function') {
         onClose();
       }
     }
   }, [modalState, onKeyDownHandler, initModalClosing, onClose]);
 
-  if (!portalContainerRef.current || modalState === EModalState.CLOSED) {
+  if (modalState === EModalState.CLOSED || modalState === EModalState.PREPARED) {
     return null;
   }
 
   return (
-    <Portal container={portalContainerRef.current}>
-      <div className={
-        classNames(cls.mOverlay,
-          {
-            [cls.mOverlay_opening]: modalState === EModalState.OPENING,
-            [cls.mOverlay_opened]: modalState === EModalState.OPENED,
-            [cls.mOverlay_closing]: modalState === EModalState.CLOSING,
-          },
-          [className],
-        )}>
-        <Button className={cls.moButtonClose} onClick={onCloseButtonClickHandler}>x</Button>
-        <div className={cls.moContent} ref={contentElRef}>
-          {children}
-        </div>
+    <div className={
+      classNames(cls.mOverlay,
+        {
+          [cls.mOverlay_opening]: modalState === EModalState.OPENING,
+          [cls.mOverlay_opened]: modalState === EModalState.OPENED,
+          [cls.mOverlay_closing]: modalState === EModalState.CLOSING,
+        },
+        [className],
+      )}>
+      <Button className={cls.moButtonClose} onClick={onCloseButtonClickHandler}>x</Button>
+      <div className={cls.moContent} ref={contentElRef}>
+        {children}
       </div>
-    </Portal>
+    </div>
   );
 };
