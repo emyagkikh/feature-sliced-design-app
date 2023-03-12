@@ -1,8 +1,9 @@
-.app {
+body {
   &.light {
     --primary-color: #333;
     --secondary-color: #666;
     --bg-primary-color: #eee;
     --bg-secondary-color: #444;
+    --overlay-color: rgb(255 255 255 / 70%);
   }
 }

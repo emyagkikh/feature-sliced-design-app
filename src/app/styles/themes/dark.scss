@@ -1,9 +1,10 @@
-.app {
+body {
   &.dark {
     --primary-color: #bb86fc;
     --secondary-color: #6200ee;
     --bg-primary-color: #000;
     --bg-secondary-color: #222;
     --border-primary-color: #333;
+    --overlay-color: rgb(0 0 0 / 70%);
   }
 }
