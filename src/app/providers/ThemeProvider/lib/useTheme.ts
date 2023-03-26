@@ -6,6 +6,11 @@ interface useThemeResult {
   toggleTheme: () => void
 }
 
+const setBodyThemeClass = (theme: ThemeEnum) => {
+  document.body.classList.toggle('light', theme === ThemeEnum.LIGHT);
+  document.body.classList.toggle('dark', theme === ThemeEnum.DARK);
+};
+
 export function useTheme (): useThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -16,8 +21,12 @@ export function useTheme (): useThemeResult {
       setTheme(newTheme);
     }
 
+    setBodyThemeClass(newTheme);
+
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
+
+  setBodyThemeClass(theme);
 
   return {
     theme,

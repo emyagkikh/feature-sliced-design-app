@@ -8,6 +8,7 @@ module.exports = {
     'standard-with-typescript',
     'plugin:react/recommended',
     'plugin:i18next/recommended',
+    'plugin:react-hooks/recommended',
   ],
   'overrides': [
   ],
@@ -26,7 +27,9 @@ module.exports = {
     'i18next',
   ],
   'rules': {
-    'indent': [2, 2],
+    'indent': [2, 2, {
+      'SwitchCase': 1,
+    }],
     'quote-props': [1, 'always'],
     'comma-dangle': [1, 'always-multiline'],
     '@typescript-eslint/comma-dangle': 0,
@@ -42,6 +45,9 @@ module.exports = {
     '@typescript-eslint/naming-convention': [0, 'always'],
     '@typescript-eslint/strict-boolean-expressions': [0, 'always'],
     'i18next/no-literal-string': [0, 'always'],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-params-reassign': 'off',
   },
   'settings': {
     'react': {

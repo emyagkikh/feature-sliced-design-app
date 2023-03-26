@@ -1,9 +1,14 @@
 .Navbar {
   width: 100%;
-  height: var(--navbar-height);
+  min-height: 50px;
   background: var(--bg-secondary-color);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 10px 20px;
+}
+
+.nControls {
+  display: flex;
+  align-items: center;
 }
