@@ -1,6 +1,9 @@
 import path from 'path';
 
 export default {
+  'globals': {
+    '__DEV__': true,
+  },
   'moduleDirectories': [
     'node_modules',
   ],

@@ -47,6 +47,7 @@ module.exports = {
     'i18next/no-literal-string': [0, 'always'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'no-params-reassign': 'off',
   },
   'settings': {
     'react': {
