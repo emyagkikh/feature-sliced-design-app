@@ -8,7 +8,7 @@ import { type DeepPartial } from '@reduxjs/toolkit';
 
 export interface componentRenderOptions {
   route?: string
-  initialState: DeepPartial<StateSchema>
+  initialState?: DeepPartial<StateSchema>
 }
 
 export const componentRender = (component: ReactNode, options: componentRenderOptions) => {
